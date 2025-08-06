@@ -1,2 +1,6 @@
 Ho la este es el inicio de Git
 Segundo commit
+Muchos cambios
+Mas cambios aun
+
+Otro cambio
