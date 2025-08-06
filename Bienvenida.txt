@@ -1,7 +1,7 @@
 Hola este es el inicio de Git
-Segundo commit
-Muchos cambios
-Mas cambios aun
+Segundo commit 22
+Muchos cambios 22
+Mas cambios aun 22
 
 Otro cambio
 Creando commit desde la rama dani
