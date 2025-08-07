@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bienvenidos al Curso</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #333;
+        }
+
+        .container {
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 20px;
+            padding: 3rem;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            max-width: 600px;
+            margin: 2rem;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .welcome-title {
+            font-size: 3rem;
+            font-weight: 700;
+            color: #4a5568;
+            margin-bottom: 1rem;
+            background: linear-gradient(45deg, #667eea, #764ba2);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .subtitle {
+            font-size: 1.5rem;
+            color: #718096;
+            margin-bottom: 2rem;
+            font-weight: 300;
+        }
+
+        .welcome-message {
+            font-size: 1.1rem;
+            line-height: 1.6;
+            color: #4a5568;
+            margin-bottom: 2rem;
+        }
+
+        .features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1.5rem;
+            margin: 2rem 0;
+        }
+
+        .feature {
+            background: linear-gradient(135deg, #f7fafc, #edf2f7);
+            padding: 1.5rem;
+            border-radius: 15px;
+            border: 1px solid #e2e8f0;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .feature:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+        }
+
+        .feature-icon {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            display: block;
+        }
+
+        .feature-title {
+            font-size: 1.2rem;
+            font-weight: 600;
+            color: #2d3748;
+            margin-bottom: 0.5rem;
+        }
+
+        .feature-description {
+            color: #718096;
+            font-size: 0.9rem;
+        }
+
+        .cta-button {
+            background: linear-gradient(45deg, #667eea, #764ba2);
+            color: white;
+            border: none;
+            padding: 1rem 2rem;
+            border-radius: 50px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            margin-top: 1rem;
+            text-decoration: none;
+            display: inline-block;
+        }
+
+        .cta-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 20px rgba(102, 126, 234, 0.3);
+        }
+
+        .footer {
+            margin-top: 2rem;
+            padding-top: 2rem;
+            border-top: 1px solid #e2e8f0;
+            color: #718096;
+            font-size: 0.9rem;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                margin: 1rem;
+                padding: 2rem;
+            }
+            
+            .welcome-title {
+                font-size: 2.5rem;
+            }
+            
+            .subtitle {
+                font-size: 1.2rem;
+            }
+            
+            .features {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .animation {
+            animation: fadeInUp 1s ease-out;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container animation">
+        <h1 class="welcome-title">¡Bienvenidos al Curso!</h1>
+        <p class="subtitle">Tu viaje de aprendizaje comienza aquí</p>
+        
+        <div class="welcome-message">
+            <p>Estamos emocionados de tenerte con nosotros en este curso. Prepárate para aprender, crecer y desarrollar nuevas habilidades que te ayudarán a alcanzar tus objetivos.</p>
+        </div>
+
+        <div class="features">
+            <div class="feature">
+                <span class="feature-icon">🚀</span>
+                <h3 class="feature-title">Aprendizaje Práctico</h3>
+                <p class="feature-description">Aprende haciendo con proyectos reales y ejercicios prácticos</p>
+            </div>
+            
+            <div class="feature">
+                <span class="feature-icon">👥</span>
+                <h3 class="feature-title">Comunidad</h3>
+                <p class="feature-description">Conecta con otros estudiantes y comparte experiencias</p>
+            </div>
+            
+            <div class="feature">
+                <span class="feature-icon">📚</span>
+                <h3 class="feature-title">Recursos</h3>
+                <p class="feature-description">Acceso a materiales de calidad y contenido actualizado</p>
+            </div>
+            <div class="feature">
+                <span class="feature-icon">📚</span>
+                <h3 class="feature-title">Joan</h3>
+                <p class="feature-description">Creado por Joan</p>
+            </div>
+
+            <div class="feature">
+                <span class="feature-icon">📚</span>
+                <h3 class="feature-title">Frank</h3>
+                <p class="feature-description">Creado por frank</p>
+            </div>
+        </div>
+        
+
+        <a href="#" class="cta-button">Comenzar Aprendizaje</a>
+
+        <div class="footer">
+            <p>¡Que tengas un excelente curso lleno de aprendizaje y crecimiento!</p>
+        </div>
+    </div>
+</body>
+</html>
