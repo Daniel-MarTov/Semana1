@@ -15,6 +15,21 @@ export const ModuleDifficulty = {
 
 export type ModuleDifficulty = typeof ModuleDifficulty[keyof typeof ModuleDifficulty];
 
+export interface EvaluationTool {
+  url: string;
+  description: string;
+}
+
+export interface Evaluation {
+  id: string;
+  name: string;
+  objective: string;
+  instructions: string;
+  schedule: string;
+  evaluation: string;
+  tools: EvaluationTool[];
+}
+
 export interface Module {
   id: string;
   title: string;
@@ -35,6 +50,7 @@ export interface Module {
   publishedAt?: string;
   totalLessons: number;
   completedLessons: number;
+  evaluations?: Evaluation[];
 }
 
 export interface ContentBlock {

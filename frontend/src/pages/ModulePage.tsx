@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useParams, Link } from 'react-router-dom';
 import { moduleService } from '../services/moduleService';
-import type { Module, Lesson } from '../types/education';
+import type { Module, Lesson, Evaluation } from '../types/education';
 import { ModuleDifficulty } from '../types/education';
 
 const ModulePage: React.FC = () => {
@@ -314,6 +314,8 @@ const ModulePage: React.FC = () => {
           )}
         </div>
 
+        {module.evaluations && <EvaluationSection evaluations={module.evaluations} moduleSlug={module.slug} />}
+
         {/* Call to Action */}
         {lessons.length > 0 && (
           <div className="mt-12 bg-gradient-to-r from-blue-600 to-indigo-800 rounded-xl p-8 text-white text-center">
@@ -372,8 +374,52 @@ const ModulePage: React.FC = () => {
           </div>
         )}
       </div>
+      
     </div>
   );
 };
 
 export default ModulePage; 
+
+
+const EvaluationSection = ({ evaluations, moduleSlug }: { evaluations: Evaluation[], moduleSlug: string }) => {
+  return (
+    <div className="bg-white rounded-xl shadow-lg overflow-hidden mt-12">
+          <div className="bg-gradient-to-r from-gray-50 to-blue-50 px-8 py-6 border-b border-gray-200">
+            <h2 className="text-2xl font-bold text-gray-900">Evaluaciones</h2>
+            <p className="text-gray-600 mt-2">Completa las evaluaciones para entender mejor el contenido del módulo</p>
+          </div>
+
+          <div className="divide-y divide-gray-200">
+            {evaluations.map((evaluation, index) => (
+              <div key={evaluation.id} className="group hover:bg-gray-50 transition-colors">
+                <Link 
+                  to={`/modules/${moduleSlug}/evaluations/${evaluation.id}`}
+                  className="block px-8 py-6"
+                >
+                  <div className="flex items-center justify-between">
+                    <div className="flex items-center space-x-4">
+                      {/* Número de lección */}
+                      <div className={`w-10 h-10 rounded-full flex items-center justify-center font-bold text-sm bg-gray-200 text-gray-600 transition-colors`}>
+                        {index + 1}
+                      </div>
+
+                      {/* Información de la lección */}
+                      <div>
+                        <div className="flex items-center space-x-3 mb-1">
+                          <h3 className="text-lg font-semibold text-gray-900 group-hover:text-blue-600 transition-colors">
+                            {evaluation.name}
+                          </h3>
+                        </div>
+                    
+                      </div>
+                    </div>
+                  </div>
+                </Link>
+              </div>
+            ))}
+          </div>
+        </div>
+  );
+};
+

@@ -48,7 +48,8 @@ export class ModuleController {
         status: module.status,
         createdAt: module.createdAt,
         updatedAt: module.updatedAt,
-        publishedAt: module.publishedAt
+        publishedAt: module.publishedAt,
+        evaluations: module.evaluations
       }));
 
       return res.status(HttpStatus.OK).json({
@@ -95,7 +96,8 @@ export class ModuleController {
           status: module.status,
           createdAt: module.createdAt,
           updatedAt: module.updatedAt,
-          publishedAt: module.publishedAt
+          publishedAt: module.publishedAt,
+          evaluations: module.evaluations
         };
 
         return res.status(HttpStatus.OK).json({

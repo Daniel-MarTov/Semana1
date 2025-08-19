@@ -1,3 +1,5 @@
+import type { Evaluation } from "@/types/education";
+
 // Interfaces para la API educativa
 export interface Module {
   id: string;
@@ -16,6 +18,7 @@ export interface Module {
   completedLessons: number;
   createdAt: string;
   publishedAt?: string;
+  evaluations: Evaluation[];
 }
 
 export interface Lesson {
@@ -113,6 +116,7 @@ export const getModuleBySlug = async (slug: string): Promise<Module> => {
     throw error;
   }
 };
+
 
 export const getModuleLessons = async (moduleId: string): Promise<Lesson[]> => {
   try {

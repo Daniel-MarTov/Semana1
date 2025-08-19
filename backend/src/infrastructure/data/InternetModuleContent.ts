@@ -1,5 +1,6 @@
 import { Module, ModuleDifficulty, ModuleStatus } from '@domain/entities/Module';
 import { Lesson, LessonType, LessonStatus } from '@domain/entities/Lesson';
+import { InternetModuleEvaluation } from './evaluations/InternetModuleEvaluation';
 
 export const InternetModule = new Module(
   'internet-module',
@@ -22,7 +23,8 @@ export const InternetModule = new Module(
   ModuleStatus.PUBLISHED,
   new Date().toISOString(),
   new Date().toISOString(),
-  new Date().toISOString()
+  new Date().toISOString(),
+  [InternetModuleEvaluation]  
 );
 
 export const InternetLessons = [

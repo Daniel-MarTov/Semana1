@@ -1,4 +1,5 @@
 import { DomainEntity, UUID, Timestamp } from '@shared/types/common';
+import { Evaluation } from './Evaluation';
 
 export enum ModuleStatus {
   DRAFT = 'draft',
@@ -30,6 +31,7 @@ export interface ModuleProps {
   createdAt: Timestamp;
   updatedAt: Timestamp;
   publishedAt: Timestamp | undefined;
+  evaluations: Evaluation[];
 }
 
 export class Module {
@@ -50,6 +52,7 @@ export class Module {
     private _createdAt: string = new Date().toISOString(),
     private _updatedAt: string = new Date().toISOString(),
     private _publishedAt?: string,
+    public readonly evaluations?: Evaluation[]
   ) {}
 
   get status(): ModuleStatus {

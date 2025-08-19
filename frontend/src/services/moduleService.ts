@@ -39,11 +39,13 @@ export class ModuleService {
   async getModuleBySlug(slug: string): Promise<Module> {
     try {
       const response = await fetch(`${API_BASE_URL}/modules/${slug}`);
+      console.log('Fetching module by slug:', `${API_BASE_URL}/modules/${slug}`);
       if (!response.ok) {
         throw new Error(`HTTP error! status: ${response.status}`);
       }
       
       const data: ApiResponse<Module> = await response.json();
+      console.log('Module data:', data);
       
       if (!data.success || !data.data) {
         throw new Error(data.message || 'Módulo no encontrado');
